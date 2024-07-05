@@ -15,6 +15,12 @@ public class SoundexTests
     }
 
     [Fact]
+    public void HandlesNamesWithDuplicateConsonants()
+    {
+        Assert.Equal(Soundex.GenerateSoundex("Tennessee"), "T520");
+    }
+    
+    [Fact]
     public void HandlesMultipleCharacter()
     {    
         Assert.Equal(Soundex.GenerateSoundex("Smith"), "S530");
@@ -32,9 +38,4 @@ public class SoundexTests
         Assert.Equal(Soundex.GenerateSoundex("Cry"), "C600");
     }
 
-    [Fact]
-    public void HandlesNamesWithDuplicateConsonants()
-    {
-        Assert.Equal(Soundex.GenerateSoundex("Tennessee"), "T520");
-    }
 }
